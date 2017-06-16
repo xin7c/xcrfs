@@ -15,11 +15,12 @@ Acfun homepage...
     Should Be Equal As Strings	${resp.status_code}	200
     Log    ${resp.content}
     Log    “acfun首页”
+    Sleep    1
 
 Acfun login...
 
       Create Session    acfun    http://www.acfun.cn
       ${resp}=    Get Request    acfun    /login/
-      Should Be Equal As Strings	${resp.status_code}	2000
+      Should Be Equal As Strings	${resp.status_code}	200
       Log    ${resp.content}
       Log    “acfun登陆”
